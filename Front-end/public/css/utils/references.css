@@ -1,0 +1,12 @@
+.references {
+    width: 100%;
+    padding-top: 20px;
+    display: flex;
+    justify-content: center;
+}
+
+.reference-item {
+    display: inline-block;
+    padding: 10px;
+    text-align: center;
+}

@@ -1,0 +1,49 @@
+.backpage-button {
+    display: inline-block;
+    height: 60px;
+    color: white;
+    text-transform: none;
+    vertical-align: top;
+}
+
+.syw-button {
+    color: white;
+    text-transform: none;
+}
+
+.syw-button.default {
+    background-color: #2DF;
+    color: black;
+}
+
+.syw-button.warning {
+    background-color: #FD4;
+    color: black;
+}
+
+.syw-button.critical {
+    background-color: #F24;
+    color: white;
+}
+
+.syw-button.default.bordered {
+    background-color: unset;
+    border: solid 1px #2DF;
+    color: #2DF;
+}
+
+.syw-button.warning.bordered {
+    background-color: unset;
+    border: solid 1px #FD4;
+    color: #FD4;
+}
+
+.syw-button.critical.bordered {
+    background-color: unset;
+    border: solid 1px #F24;
+    color: #F24;
+}
+
+.syw-button.return-button {
+    margin-bottom: 20px;
+}

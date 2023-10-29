@@ -1,0 +1,60 @@
+.syw-pagination {
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+
+.syw-pagination-content-container {
+    display: inline-block;
+    width: 100%;
+}
+
+.syw-pagination-rpp-container {
+    display: flex;
+    justify-content: center;
+    color: #2DF;
+    margin: auto;
+    padding: 2px
+}
+
+.syw-pagination-rpp-text {
+    display: block;
+    width: 100%;
+    margin-right: 5px;
+    text-align: center;
+}
+
+.syw-pagination-button {
+    display: flex;
+    justify-content: center;
+    color: #2DF;
+    padding: 2px;
+    margin-left: 2px;
+    margin-right: 2px;
+}
+
+.syw-pagination-button.selected {
+    color: #222;
+    background-color: #2DF;
+}
+
+.syw-pagination-container {
+    display: inline-block;
+    padding: 2px;
+    color: #2DF;
+    text-align: center;
+}
+
+.syw-pagination-prev-page-button {
+    height: 100%;
+}
+
+.syw-pagination-next-page-button {
+    height: 100%;
+}
+
+.syw-pagination-pages-container {
+    display: flex;
+    justify-content: center;
+    padding: 2px;
+}
