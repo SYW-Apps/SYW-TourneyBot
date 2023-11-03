@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace SYWTourneyBot.Tournaments.Exchange.DTO.Tournament.Details.Discord
 {
-    internal interface ITournamentDiscordChannel : ITournamentDiscord, IIdentifier
+    public interface ITournamentDiscordChannel : ITournamentDiscord, IIdentifier
     {
         public string? DiscordChannel { get; set; }
     }
