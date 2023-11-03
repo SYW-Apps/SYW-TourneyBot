@@ -22,4 +22,11 @@
     </PackageReference>
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\SYWTourneyBot.Tournaments.Core\SYWTourneyBot.Tournaments.Core.csproj" />
+    <ProjectReference Include="..\SYWTourneyBot.Tournaments.DAL\SYWTourneyBot.Tournaments.DAL.csproj" />
+    <ProjectReference Include="..\SYWTourneyBot.Tournaments.Exchange\SYWTourneyBot.Tournaments.Exchange.csproj" />
+    <ProjectReference Include="..\SYWTourneyBot.Tournaments\SYWTourneyBot.Tournaments.csproj" />
+  </ItemGroup>
+
 </Project>

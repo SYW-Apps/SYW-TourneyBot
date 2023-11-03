@@ -6,4 +6,12 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\SYWTourneyBot.Tournaments.Exchange\SYWTourneyBot.Tournaments.Exchange.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Services\Storage\Repositories\" />
+  </ItemGroup>
+
 </Project>
