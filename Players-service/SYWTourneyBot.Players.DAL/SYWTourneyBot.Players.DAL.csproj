@@ -6,4 +6,9 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
+  <ItemGroup>
+    <Folder Include="Services\Storage\HttpClients\" />
+    <Folder Include="Services\Storage\Repositories\" />
+  </ItemGroup>
+
 </Project>

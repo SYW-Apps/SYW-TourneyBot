@@ -3,7 +3,15 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.7.34221.43
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SYWTourneyBot.Players", "SYWTourneyBot.Players\SYWTourneyBot.Players.csproj", "{3360DC07-B1E8-4C87-AC29-B8E1A857007C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SYWTourneyBot.Players", "SYWTourneyBot.Players\SYWTourneyBot.Players.csproj", "{3360DC07-B1E8-4C87-AC29-B8E1A857007C}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SYWTourneyBot.Players.Core", "SYWTourneyBot.Players.Core\SYWTourneyBot.Players.Core.csproj", "{0C146F5E-CE35-4E3B-A29A-712036D55785}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SYWTourneyBot.Players.DAL", "SYWTourneyBot.Players.DAL\SYWTourneyBot.Players.DAL.csproj", "{6247489E-C4B8-4509-8F89-1FBC0519F7C5}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SYWTourneyBot.Players.Exchange", "SYWTourneyBot.Players.Exchange\SYWTourneyBot.Players.Exchange.csproj", "{EEFCAE3F-1124-4273-ABA4-54A1D3D065B2}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SYWTourneyBot.Players.Tests", "SYWTourneyBot.PlayersTests\SYWTourneyBot.Players.Tests.csproj", "{6F8C260F-FA45-4A0F-8716-175952FDA819}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +23,22 @@ Global
 		{3360DC07-B1E8-4C87-AC29-B8E1A857007C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{3360DC07-B1E8-4C87-AC29-B8E1A857007C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{3360DC07-B1E8-4C87-AC29-B8E1A857007C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0C146F5E-CE35-4E3B-A29A-712036D55785}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0C146F5E-CE35-4E3B-A29A-712036D55785}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0C146F5E-CE35-4E3B-A29A-712036D55785}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0C146F5E-CE35-4E3B-A29A-712036D55785}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6247489E-C4B8-4509-8F89-1FBC0519F7C5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6247489E-C4B8-4509-8F89-1FBC0519F7C5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6247489E-C4B8-4509-8F89-1FBC0519F7C5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6247489E-C4B8-4509-8F89-1FBC0519F7C5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EEFCAE3F-1124-4273-ABA4-54A1D3D065B2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EEFCAE3F-1124-4273-ABA4-54A1D3D065B2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EEFCAE3F-1124-4273-ABA4-54A1D3D065B2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EEFCAE3F-1124-4273-ABA4-54A1D3D065B2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6F8C260F-FA45-4A0F-8716-175952FDA819}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6F8C260F-FA45-4A0F-8716-175952FDA819}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6F8C260F-FA45-4A0F-8716-175952FDA819}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6F8C260F-FA45-4A0F-8716-175952FDA819}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
