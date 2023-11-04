@@ -3,31 +3,34 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using SYWTourneyBot.Players.Exchange.DTO.Player.Rank;
+using SYWTourneyBot.Players.DAL.Services.Storage.HttpClients;
 using SYWTourneyBot.Players.Exchange.DTO.Player.Ranks;
+using SYWTourneyBot.Players.Exchange.Repositories;
 
 namespace SYWTourneyBot.Players.DAL.Services.Storage.Repositories
 {
-    public class RanksRepo
+    public class RanksRepo : IRanksRepo
     {
-        public RanksRepo()
+        private readonly PlayersStorageServiceHttpClient _client;
+
+        public RanksRepo(PlayersStorageServiceHttpClient client)
         {
-        
+            _client = client;
         }
 
-        public Ranks GetRanks(string id)
+        public ValueTask<Ranks?> GetRanks(string id)
         {
-            return new Ranks();
+            return _client.Get<Ranks>($"/api/players/ranks/{id}");
         }
 
-        public GameRank GetGameRank(string id)
+        public ValueTask<GameRank?> GetGameRank(string id, string game)
         {
-            return new GameRank();
+            return _client.Get<GameRank>($"/api/players/ranks/{id}/{game}");
         }
 
-        public GameModeRank GetGameModeRank(string id)
+        public ValueTask<GameModeRank?> GetGameModeRank(string id, string game, string gamemode)
         {
-            return new GameModeRank();
+            return _client.Get<GameModeRank>($"/api/players/ranks/{id}/{game}/{gamemode}");
         }
     }
 }

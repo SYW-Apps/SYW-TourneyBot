@@ -3,32 +3,33 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using SYWTourneyBot.Players.Exchange.DTO.Player;
-using SYWTourneyBot.Players.Exchange.DTO.Player.Rank;
 using SYWTourneyBot.Players.Exchange.DTO.Player.Ranks;
+using SYWTourneyBot.Players.Exchange.Repositories;
 
 namespace SYWTourneyBot.Players.Core
 {
     public class RanksHandler
     {
-        public RanksHandler()
-        {
+        private readonly IRanksRepo _repo;
 
+        public RanksHandler(IRanksRepo repo)
+        {
+            _repo = repo;
         }
 
-        public Ranks GetRanks(string id)
+        public ValueTask<Ranks?> GetRanks(string id)
         {
-            return new Ranks();
+            return _repo.GetRanks(id);
         }
 
-        public GameRank GetGameRank(string id)
+        public ValueTask<GameRank?> GetGameRank(string id, string game)
         {
-            return new GameRank();
+            return _repo.GetGameRank(id, game);
         }
 
-        public GameModeRank GetGameModeRank(string id)
+        public ValueTask<GameModeRank?> GetGameModeRank(string id, string game, string gamemode)
         {
-            return new GameModeRank();
+            return _repo.GetGameModeRank(id, game, gamemode);
         }
     }
 }

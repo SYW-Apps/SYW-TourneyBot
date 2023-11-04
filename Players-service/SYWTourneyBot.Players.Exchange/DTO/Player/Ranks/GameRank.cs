@@ -10,6 +10,6 @@ namespace SYWTourneyBot.Players.Exchange.DTO.Player.Ranks
     {
         public string? GameId { get; set; }
         public string? GameName { get; set; }
-        public IDictionary<string, GameRank> Games { get; set; } = new Dictionary<string, GameRank>();
+        public IDictionary<string, GameModeRank> GameModes { get; set; } = new Dictionary<string, GameModeRank>();
     }
 }

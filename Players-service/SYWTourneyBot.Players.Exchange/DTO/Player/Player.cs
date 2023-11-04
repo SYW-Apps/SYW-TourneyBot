@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using SYWTourneyBot.Players.Exchange.DTO.Player.Rank;
 
 namespace SYWTourneyBot.Players.Exchange.DTO.Player
 {
@@ -36,6 +35,6 @@ namespace SYWTourneyBot.Players.Exchange.DTO.Player
         public string? NintendoSwitchId { get; set; }
         public string? NintendoSwitchName { get; set; }
 
-        public Ranks? Ranks { get; set; }
+        public Ranks.Ranks? Ranks { get; set; }
     }
 }

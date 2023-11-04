@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using SYWTourneyBot.Players.Exchange.DTO.Player.Ranks;
 
-namespace SYWTourneyBot.Players.Exchange.DTO.Player.Rank
+namespace SYWTourneyBot.Players.Exchange.DTO.Player.Ranks
 {
     public class Ranks
     {

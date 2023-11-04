@@ -1,39 +1,43 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Security.Principal;
 using System.Text;
 using System.Threading.Tasks;
+using SYWTourneyBot.Players.DAL.Services.Storage.HttpClients;
 using SYWTourneyBot.Players.Exchange.DTO.Player;
-using SYWTourneyBot.Players.Exchange.DTO.Player.Rank;
 using SYWTourneyBot.Players.Exchange.DTO.Player.Ranks;
+using SYWTourneyBot.Players.Exchange.Repositories;
 
 namespace SYWTourneyBot.Players.DAL.Services.Storage.Repositories
 {
-    public class PlayerDetailsRepo
+    public class PlayerDetailsRepo : IPlayerDetailsRepo
     {
-        public PlayerDetailsRepo()
+        private readonly PlayersStorageServiceHttpClient _client;
+
+        public PlayerDetailsRepo(PlayersStorageServiceHttpClient client)
         {
-        
+            _client = client;
         }
 
-        public IEnumerable<Player> GetAll(int page, int limit)
+        public async ValueTask<IEnumerable<Player>> GetAll(int page, int limit)
         {
-            return new List<Player>();
+            return await _client.Get<IEnumerable<Player>>($"/api/players/all?{nameof(page)}={page}&{nameof(limit)}={limit}") ?? throw new ArgumentException($"Storage Service did not return an object of type '{nameof(IEnumerable<Player>)}'");
         }
 
-        public IEnumerable<Player> Search(string search, string? by, int page, int limit)
+        public async ValueTask<IEnumerable<Player>> Search(string search, string? by, int page, int limit)
         {
-            return new List<Player>();
+            return await _client.Get<IEnumerable<Player>>($"/api/players/search?{nameof(search)}={search}&{nameof(by)}={by}&{nameof(page)}={page}&{nameof(limit)}={limit}") ?? throw new ArgumentException($"Storage Service did not return an object of type '{nameof(IEnumerable<Player>)}'");
         }
 
-        public Player GetById(string id)
+        public ValueTask<Player?> GetById(string id)
         {
-            return new Player();
+            return _client.Get<Player>($"/api/players/{id}");
         }
 
-        public string GetIdByOtherId(string otherId)
+        public ValueTask<string?> GetIdByOtherId(string otherId)
         {
-            return string.Empty;
+            return _client.Get<string>($"/api/players/id/{otherId}");
         }
     }
 }

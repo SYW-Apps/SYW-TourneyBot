@@ -13,5 +13,7 @@ namespace SYWTourneyBot.Players.Exchange.DTO.Player.Ranks
 
         public float? MMR { get; set; }
         public string? RankName { get; set; }
+
+        public DateTime? LastUpdatedTime { get; set; }
     }
 }

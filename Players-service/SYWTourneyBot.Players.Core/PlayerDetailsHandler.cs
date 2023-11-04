@@ -4,34 +4,37 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using SYWTourneyBot.Players.Exchange.DTO.Player;
+using SYWTourneyBot.Players.Exchange.Repositories;
 
 namespace SYWTourneyBot.Players.Core
 {
     public class PlayerDetailsHandler
     {
-        public PlayerDetailsHandler()
-        {
+        private readonly IPlayerDetailsRepo _repo;
 
+        public PlayerDetailsHandler(IPlayerDetailsRepo repo)
+        {
+            _repo = repo;
         }
 
-        public IEnumerable<Player> GetAll(int page, int limit)
+        public ValueTask<IEnumerable<Player>> GetAll(int page, int limit)
         {
-            return new List<Player>();
+            return _repo.GetAll(page, limit);
         }
 
-        public IEnumerable<Player> Search(string search, string? by, int page, int limit)
+        public ValueTask<IEnumerable<Player>> Search(string search, string? by, int page, int limit)
         {
-            return new List<Player>();
+            return _repo.Search(search, by, page, limit);
         }
 
-        public Player GetById(string id)
+        public ValueTask<Player?> GetById(string id)
         {
-            return new Player();
+            return _repo.GetById(id);
         }
 
-        public string GetIdByOtherId(string otherId)
+        public ValueTask<string?> GetIdByOtherId(string otherId)
         {
-            return string.Empty;
+            return _repo.GetIdByOtherId(otherId);
         }
     }
 }
