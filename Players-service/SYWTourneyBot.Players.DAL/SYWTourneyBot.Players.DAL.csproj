@@ -8,7 +8,6 @@
 
   <ItemGroup>
     <Folder Include="Services\Storage\HttpClients\" />
-    <Folder Include="Services\Storage\Repositories\" />
   </ItemGroup>
 
   <ItemGroup>
