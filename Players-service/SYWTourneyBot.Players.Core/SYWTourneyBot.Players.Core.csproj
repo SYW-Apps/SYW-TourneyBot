@@ -6,4 +6,8 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\SYWTourneyBot.Players.Exchange\SYWTourneyBot.Players.Exchange.csproj" />
+  </ItemGroup>
+
 </Project>

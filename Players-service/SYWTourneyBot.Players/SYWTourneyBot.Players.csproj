@@ -6,4 +6,10 @@
     <ImplicitUsings>enable</ImplicitUsings>
   </PropertyGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\SYWTourneyBot.Players.Core\SYWTourneyBot.Players.Core.csproj" />
+    <ProjectReference Include="..\SYWTourneyBot.Players.DAL\SYWTourneyBot.Players.DAL.csproj" />
+    <ProjectReference Include="..\SYWTourneyBot.Players.Exchange\SYWTourneyBot.Players.Exchange.csproj" />
+  </ItemGroup>
+
 </Project>

@@ -11,4 +11,8 @@
     <Folder Include="Services\Storage\Repositories\" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\SYWTourneyBot.Players.Exchange\SYWTourneyBot.Players.Exchange.csproj" />
+  </ItemGroup>
+
 </Project>
