@@ -1,0 +1,377 @@
+name: Build-and-Test
+
+on:
+  push:
+    
+  pull_request:
+
+
+jobs:
+  check:
+  
+    name: Check files
+    
+    outputs:
+      front_end: ${{ steps.check_files.outputs.front_end }}
+      accounts_service: ${{ steps.check_files.outputs.accounts_service }}
+      account_relations_service: ${{ steps.check_files.account_relations_service }}
+      applications_service: ${{ steps.check_files.outputs.applications_service }}
+      application_members_service: ${{ steps.check_files.outputs.application_members_service }}
+      organisations_service: ${{ steps.check_files.outputs.organisations_service }}
+      organisation_members_service: ${{ steps.check_files.outputs.organisation_members_service }}
+      sign_in_service: ${{ steps.check_files.outputs.sign_in_service }}
+      mfa_service: ${{ steps.check_files.outputs.mfa_service }}
+      email_service: ${{ steps.check_files.outputs.email_service }}
+      sms_service: ${{ steps.check_files.outputs.sms_service }}
+      
+    runs-on: self-hosted
+    
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+        with:
+          fetch-depth: 2
+      - name: Check modified services
+        id: check_files
+        run: |
+          echo "========== check modified files =========="
+          git diff --name-only HEAD^ HEAD > files.txt
+          foreach ( $file in [System.IO.File]::ReadLines(".\files.txt") ) {
+            if ( $file.StartsWith("Front-end/") ) {
+              echo "::set-output name=front_end::true"
+              echo ($file + " -> Front-end")
+            }
+            elseif ( $file.StartsWith("Accounts-service/") ) {
+              echo "::set-output name=accounts_service::true"
+              echo ($file + " -> Accounts-service")
+            }
+            elseif ( $file.StartsWith("Account-relations-service/") ) {
+              echo "::set-output name=account_relations_service::true"
+              echo ($file + " -> Account-relations-service")
+            }
+            elseif ( $file.StartsWith("Applications-service/") ) {
+              echo "::set-output name=applications_service::true"
+              echo ($file + " -> Applications-service")
+            }
+            elseif ( $file.StartsWith("Application-members-service/") ) {
+              echo "::set-output name=application_members_service::true"
+              echo ($file + " -> Application-members-service")
+            }
+            elseif ( $file.StartsWith("Organisations-service/") ) {
+              echo "::set-output name=organisations_service::true"
+              echo ($file + " -> Organisations-service")
+            }
+            elseif ( $file.StartsWith("Organisation-members-service/") ) {
+              echo "::set-output name=organisation_members_service::true"
+              echo ($file + " -> Organisation-members-service")
+            }
+            elseif ( $file.StartsWith("Sign-in-service/") ) {
+              echo "::set-output name=sign_in_service::true"
+              echo ($file + " -> Sign-in-service")
+            }
+            elseif ( $file.StartsWith("MFA-service/") ) {
+              echo "::set-output name=mfa_service::true"
+              echo ($file + " -> MFA-service")
+            }
+            elseif ( $file.StartsWith("Email-service/") ) {
+              echo "::set-output name=email_service::true"
+              echo ($file + " -> Email-service")
+            }
+            elseif ( $file.StartsWith("SMS-service/") ) {
+              echo "::set-output name=sms_service::true"
+              echo ($file + " -> SMS-service")
+            }
+            else {
+              echo ($file + " -> -None")
+            }
+          }
+          rm files.txt
+
+  build-Frontend:
+
+    needs: check
+    if: needs.check.outputs.front_end == 'true'
+
+    defaults:
+      run:
+        working-directory: Front-end
+
+    runs-on: self-hosted
+
+    strategy:
+      matrix:
+        node-version: [14.x, 16.x, 18.x]
+
+    steps:
+    - uses: actions/checkout@v3
+    - name: Use Node.js ${{ matrix.node-version }}
+      uses: actions/setup-node@v3
+      with:
+        node-version: ${{ matrix.node-version }}
+        cache: 'npm'
+        cache-dependency-path: './Front-end/package-lock.json'
+    - run: npm run cy:test
+
+  build-Accounts-service:
+
+    needs: check
+    if: needs.check.outputs.accounts_service == 'true'
+
+    defaults:
+      run:
+        working-directory: Accounts-service
+
+    runs-on: self-hosted
+
+    steps:
+    - uses: actions/checkout@v3
+    - name: Setup .NET
+      uses: actions/setup-dotnet@v3
+      with:
+        dotnet-version: 7.0.x
+    - name: Restore dependencies
+      run: dotnet restore
+    - name: Build
+      run: dotnet build --no-restore
+    - name: Test
+      run: dotnet test --no-build --verbosity normal
+
+  build-Account-Relations-service:
+
+    needs: check
+    if: needs.check.outputs.account_relations_service == 'true'
+
+    defaults:
+      run:
+        working-directory: Account-relations-service
+
+    runs-on: self-hosted
+
+    steps:
+    - uses: actions/checkout@v3
+    - name: Setup .NET
+      uses: actions/setup-dotnet@v3
+      with:
+        dotnet-version: 7.0.x
+    - name: Restore dependencies
+      run: dotnet restore
+    - name: Build
+      run: dotnet build --no-restore
+    - name: Test
+      run: dotnet test --no-build --verbosity normal
+
+  build-Applications-service:
+
+    needs: check
+    if: needs.check.outputs.applications_service == 'true'
+
+    defaults:
+      run:
+        working-directory: Applications-service
+
+    runs-on: self-hosted
+
+    steps:
+    - uses: actions/checkout@v3
+    - name: Setup .NET
+      uses: actions/setup-dotnet@v3
+      with:
+        dotnet-version: 7.0.x
+    - name: Restore dependencies
+      run: dotnet restore
+    - name: Build
+      run: dotnet build --no-restore
+    - name: Test
+      run: dotnet test --no-build --verbosity normal
+
+  build-Application-Members-service:
+
+    needs: check
+    if: needs.check.outputs.application_members_service == 'true'
+
+    defaults:
+      run:
+        working-directory: Application-members-service
+
+    runs-on: self-hosted
+
+    steps:
+    - uses: actions/checkout@v3
+    - name: Setup .NET
+      uses: actions/setup-dotnet@v3
+      with:
+        dotnet-version: 7.0.x
+    - name: Restore dependencies
+      run: dotnet restore
+    - name: Build
+      run: dotnet build --no-restore
+    - name: Test
+      run: dotnet test --no-build --verbosity normal
+
+  build-Organisations-service:
+
+    needs: check
+    if: needs.check.outputs.organisations_service == 'true'
+
+    defaults:
+      run:
+        working-directory: Organisations-service
+
+    runs-on: self-hosted
+
+    steps:
+    - uses: actions/checkout@v3
+    - name: Setup .NET
+      uses: actions/setup-dotnet@v3
+      with:
+        dotnet-version: 7.0.x
+    - name: Restore dependencies
+      run: dotnet restore
+    - name: Build
+      run: dotnet build --no-restore
+    - name: Test
+      run: dotnet test --no-build --verbosity normal
+
+  build-Organisation-Members-service:
+
+    needs: check
+    if: needs.check.outputs.organisation_members_service == 'true'
+
+    defaults:
+      run:
+        working-directory: Organisation-members-service
+
+    runs-on: self-hosted
+
+    steps:
+    - uses: actions/checkout@v3
+    - name: Setup .NET
+      uses: actions/setup-dotnet@v3
+      with:
+        dotnet-version: 7.0.x
+    - name: Restore dependencies
+      run: dotnet restore
+    - name: Build
+      run: dotnet build --no-restore
+    - name: Test
+      run: dotnet test --no-build --verbosity normal
+
+  build-Sign-In-service:
+
+    needs: check
+    if: needs.check.outputs.sign_in_service == 'true'
+
+    defaults:
+      run:
+        working-directory: Sign-in-service
+
+    runs-on: self-hosted
+
+    steps:
+    - uses: actions/checkout@v3
+    - name: Setup .NET
+      uses: actions/setup-dotnet@v3
+      with:
+        dotnet-version: 7.0.x
+    - name: Restore dependencies
+      run: dotnet restore
+    - name: Build
+      run: dotnet build --no-restore
+    - name: Test
+      run: dotnet test --no-build --verbosity normal
+
+  build-Access-Keys-service:
+
+    needs: check
+    if: needs.check.outputs.access_keys_service == 'true'
+
+    defaults:
+      run:
+        working-directory: Access-keys-service
+
+    runs-on: self-hosted
+
+    steps:
+    - uses: actions/checkout@v3
+    - name: Setup .NET
+      uses: actions/setup-dotnet@v3
+      with:
+        dotnet-version: 7.0.x
+    - name: Restore dependencies
+      run: dotnet restore
+    - name: Build
+      run: dotnet build --no-restore
+    - name: Test
+      run: dotnet test --no-build --verbosity normal
+
+  build-MFA-service:
+
+    needs: check
+    if: needs.check.outputs.mfa_service == 'true'
+
+    defaults:
+      run:
+        working-directory: MFA-service
+
+    runs-on: self-hosted
+
+    steps:
+    - uses: actions/checkout@v3
+    - name: Setup .NET
+      uses: actions/setup-dotnet@v3
+      with:
+        dotnet-version: 7.0.x
+    - name: Restore dependencies
+      run: dotnet restore
+    - name: Build
+      run: dotnet build --no-restore
+    - name: Test
+      run: dotnet test --no-build --verbosity normal
+
+  build-Email-service:
+
+    needs: check
+    if: needs.check.outputs.email_service == 'true'
+
+    defaults:
+      run:
+        working-directory: Email-service
+
+    runs-on: self-hosted
+
+    steps:
+    - uses: actions/checkout@v3
+    - name: Setup .NET
+      uses: actions/setup-dotnet@v3
+      with:
+        dotnet-version: 7.0.x
+    - name: Restore dependencies
+      run: dotnet restore
+    - name: Build
+      run: dotnet build --no-restore
+    - name: Test
+      run: dotnet test --no-build --verbosity normal
+
+  build-SMS-service:
+
+    needs: check
+    if: needs.check.outputs.sms_service == 'true'
+
+    defaults:
+      run:
+        working-directory: SMS-service
+
+    runs-on: self-hosted
+
+    steps:
+    - uses: actions/checkout@v3
+    - name: Setup .NET
+      uses: actions/setup-dotnet@v3
+      with:
+        dotnet-version: 7.0.x
+    - name: Restore dependencies
+      run: dotnet restore
+    - name: Build
+      run: dotnet build --no-restore
+    - name: Test
+      run: dotnet test --no-build --verbosity normal
