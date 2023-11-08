@@ -1,0 +1,77 @@
+main {
+    height: 100%;
+    overflow-y: hidden;
+}
+
+.page-container {
+    min-height: 40%;
+}
+
+.page {
+    display: flex;
+    width: 100%;
+    margin: auto;
+    flex-direction: column;
+    align-items: center;
+    padding: 45px 35px 0px 35px;
+}
+
+.page-content {
+    width: 100%;
+    margin: auto;
+}
+
+.page-main {
+    display: inline-block;
+    width: 100%;
+    padding: 20px;
+    background-color: #121212;
+    border: solid 1px #2DF;
+    border-radius: 0.5rem;
+}
+
+.page-main.with-sidebar {
+    width: 74%;
+    vertical-align: top;
+}
+
+.page-sidebar {
+    display: inline-block;
+    width: 25%;
+    padding: 15px;
+    background-color: #121212;
+    border: solid 1px #2DF;
+    border-radius: 0.5rem;
+    vertical-align: top;
+    overflow: hidden;
+}
+
+.page-sidebar-item-container {
+    width: 100%;
+    border-bottom: solid 1px #555;
+    padding: 10px;
+    margin-bottom: 5px;
+}
+
+.page-title {
+    width: 100%;
+    color: white;
+    padding: 20px;
+    margin-bottom: 15px;
+    border-bottom: solid 1px #555;
+}
+
+.page-content {
+    width: 100%;
+    color: white;
+    padding: 10px;
+}
+
+.page-item {
+    width: 100%;
+    padding-left: 30px;
+}
+
+.return-button-container {
+    width: 100%;
+}

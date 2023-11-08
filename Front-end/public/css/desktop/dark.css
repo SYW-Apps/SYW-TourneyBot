@@ -1,0 +1,112 @@
+html,
+body,
+#root {
+    background-color: #222;
+    color: white;
+}
+
+.root {
+    background-color: #222;
+    color: white;
+}
+
+.page-main {
+    background-color: #121212;
+}
+
+.page-sidebar {
+    background-color: #121212;
+}
+
+.page-title {
+    color: white;
+}
+
+.page-content {
+    color: white;
+}
+
+.loading-container {
+    color: white;
+}
+
+.app-bar {
+    background-color: #121212;
+    color: white;
+}
+
+.config-panel {
+    background-color: #121212;
+}
+
+.config-panel-item {
+    color: white;
+}
+
+.config-panel-button {
+    color: white;
+}
+
+.config-button {
+    color: white;
+}
+
+footer {
+    background-color: #121212;
+}
+
+.footer-container {
+    color: white;
+}
+
+.backpage-button {
+    color: white;
+}
+
+.syw-button {
+    color: white;
+}
+
+input:-webkit-autofill {
+    -webkit-text-fill-color: white;
+}
+
+input:not(:-webkit-autofill) {
+    -webkit-text-fill-color: white;
+}
+
+.chevron {
+    color: white;
+}
+
+a {
+    color: white;
+}
+
+.syw-drawer-header {
+    background-color: #222;
+}
+
+.syw-drawer-header-title {
+    color: white;
+}
+
+.syw-drawer-header-chevron-icon {
+    color: white;
+}
+
+.syw-drawer-content {
+    background-color: #333;
+}
+
+.syw-drawer-item {
+    color: white;
+}
+
+.syw-drawer-item-group-title {
+    color: white;
+}
+
+.syw-drawer-footer {
+    background-color: #222;
+}

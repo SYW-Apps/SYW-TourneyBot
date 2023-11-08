@@ -1,0 +1,124 @@
+html,
+body,
+#root {
+    background-color: #eee;
+    color: black;
+}
+
+.root {
+    background-color: #eee;
+    color: black;
+}
+
+.page-main {
+    background-color: #fefefe;
+}
+
+.page-sidebar {
+    background-color: #fefefe;
+}
+
+.page-title {
+    color: black;
+}
+
+.page-content {
+    color: black;
+}
+
+.loading-container {
+    color: black;
+}
+
+.app-bar {
+    background-color: #fefefe;
+    color: black;
+}
+
+.config-panel {
+    background-color: #fefefe;
+}
+
+.config-panel-item {
+    color: black;
+}
+
+.config-panel-button {
+    color: black;
+}
+
+.config-button {
+    color: black;
+}
+
+footer {
+    background-color: #eee;
+}
+
+.footer-container {
+    color: black;
+}
+
+.footer-section {
+    color: black;
+}
+
+.footer-item {
+    color: black;
+}
+
+.backpage-button {
+    color: black;
+}
+
+.syw-button {
+    color: black;
+}
+
+input:-webkit-autofill {
+    -webkit-text-fill-color: black;
+}
+
+input:not(:-webkit-autofill) {
+    -webkit-text-fill-color: black;
+}
+
+.syw-input {
+    background-color: #EEE;
+}
+
+.chevron {
+    color: black;
+}
+
+a {
+    color: black;
+}
+
+.syw-drawer-header {
+    background-color: #eee;
+}
+
+.syw-drawer-header-title {
+    color: black;
+}
+
+.syw-drawer-header-chevron-icon {
+    color: black;
+}
+
+.syw-drawer-content {
+    background-color: #ddd;
+}
+
+.syw-drawer-item {
+    color: black;
+}
+
+.syw-drawer-item-group-title {
+    color: black;
+}
+
+.syw-drawer-footer {
+    background-color: #eee;
+}
