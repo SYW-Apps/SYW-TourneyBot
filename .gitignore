@@ -6,6 +6,8 @@
 .env
 appsettings.json
 
+.vs
+
 # User-specific files
 *.suo
 *.user

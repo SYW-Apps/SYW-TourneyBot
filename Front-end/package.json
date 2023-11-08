@@ -14,7 +14,7 @@
     "cy:run": "cypress run --browser=chrome",
     "cy:run-electron": "cypress run --browser=electron",
     "cy:ci": "cypress run",
-    "start-test-server": "set PORT=3000 && set HTTPS=false && set VITE_APP_ENVIRONMENT=development && react-scripts start",
+    "start-test-server": "set PORT=3000 && set HTTPS=false && set VITE_APP_ENVIRONMENT=development && npm start",
     "cy:test": "start-server-and-test \"npm run start-test-server\" http://localhost:3000 cy:run-electron",
     "cy:verify": "cypress verify",
     "cy:info": "cypress info"
