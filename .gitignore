@@ -137,6 +137,11 @@ stats.html
 
 .eslintcache
 
+screenshots/
+videos/
+
+.vscode
+
 # =========================
 # Windows detritus
 # =========================
