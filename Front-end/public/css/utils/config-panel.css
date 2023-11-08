@@ -1,0 +1,53 @@
+.config-panel {
+    display: none;
+    position: fixed;
+    top: 70px;
+    right: 20px;
+    width: 250px;
+    padding: 2px;
+    margin-top: -280px;
+    background-color: #121212;
+    border: solid 1px #2DF;
+    border-radius: 0.5rem;
+    box-shadow: 2px 4px 10px 5px rgba(0,0,0,100%);
+    transition: margin 195ms ease-out 0ms, height 195ms ease-out 195ms;
+	-webkit-transition: margin 195ms ease-out 0ms, height 195ms ease-out 195ms;
+	-moz-transition: margin 195ms ease-out 0ms, height 195ms ease-out 195ms;
+	-o-transition: margin 195ms ease-out 0ms, height 195ms ease-out 195ms;
+    z-index: 9999;
+}
+
+.config-panel-open {
+    display: block;
+    margin-top: 0;
+}
+
+.config-panel-item {
+    margin: auto;
+    color: white;
+    border-bottom: solid 1px #555;
+    vertical-align: middle;
+}
+
+.config-panel-button {
+    width: 100%;
+    color: white;
+}
+
+.config-button {
+    display: flex;
+    justify-content: center;
+    height: 100%;
+    color: white;
+}
+
+.config-panel-void {
+    display: none;
+    position: fixed;
+    background-color: rgba(0,0,0,35%);
+    z-index: 9998;
+}
+
+.config-panel-void.open {
+    display: block;
+}

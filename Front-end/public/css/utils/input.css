@@ -1,0 +1,64 @@
+input {
+    width: 100%;
+}
+
+input:-webkit-autofill {
+    transition: background-color 0s 99999s;
+    -webkit-text-fill-color: white;
+    -webkit-animation-delay: 1s;
+    -webkit-animation-name: onAutoFillStart;
+    -webkit-animation-fill-mode: both;
+}
+
+input:not(:-webkit-autofill) {
+    -webkit-animation-delay: 1s;
+    -webkit-text-fill-color: white;
+    -webkit-animation-name: onAutoFillStart;
+    -webkit-animation-fill-mode: both;
+}
+
+.syw-input-container {
+    background-color: #111;
+    color: white;
+    border: solid 1px white;
+    border-radius: 0.25rem;
+    margin-bottom: 5px;
+}
+
+.syw-input-container.hide-border {
+    border: unset;
+}
+
+.syw-input {
+    width: 100%;
+    background-color: #111;
+    color: white;
+}
+
+.syw-input.hidden {
+    display: none;
+}
+
+.syw-input.checkbox {
+    padding-left: 15px;
+    text-align: left;
+}
+
+.syw-input-label {
+    display: inline-block;
+    width: 80%;
+    text-align: left;
+}
+
+.syw-input.select {
+    background-color: #111;
+    color: white;
+}
+
+.syw-input-select-option {
+    background-color: #111;
+    color: white;
+    border-color: black;
+    border-radius: 0.25rem;
+    margin: 2px;
+}

@@ -1,0 +1,33 @@
+@import 'desktop.css';
+
+.page-content {
+    display: flex;
+    flex-direction: column;
+}
+
+.page-main.with-sidebar {
+    width: 100%;
+    vertical-align: top;
+    order: 2;
+}
+
+.page-sidebar {
+    min-width: 100%;
+    max-height: 180px;
+    padding: 15px;
+    margin-bottom: 10px;
+    order: 1;
+    overflow-x: auto;
+    overflow-y: hidden;
+    white-space: nowrap;
+}
+
+.page-sidebar-item-container {
+    display: inline-block;
+    width: unset;
+    height: 72px;
+    border-bottom: unset;
+    padding: 5px;
+    margin-bottom: unset;
+    vertical-align: top;
+}

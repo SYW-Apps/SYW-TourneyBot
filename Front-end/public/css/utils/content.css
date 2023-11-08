@@ -1,0 +1,35 @@
+html,
+body,
+#root {
+    position: relative;
+    background-color: #222;
+    color: white;
+    overflow: hidden;
+}
+
+body {
+    margin: 0;
+    font-family: -apple-system, BlinkMaxSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+    font-family: source-code-pro, Monaco, Consolas, "Courier New", monospace;
+}
+
+.root {
+    background-color: #222;
+    color: white;
+}
+
+.content {
+    width: 100%;
+    margin-left: 0;
+    transition: margin 195ms ease 0ms, width 195ms ease 0ms;
+}
+
+.content-shift {
+    width: calc(100% - 240px);
+    margin-left: 240px;
+}
