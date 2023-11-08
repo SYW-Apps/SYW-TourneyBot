@@ -110,6 +110,7 @@ jobs:
         node-version: ${{ matrix.node-version }}
         cache: 'npm'
         cache-dependency-path: './Front-end/package-lock.json'
+    - run: npm ci
     - run: npm run cy:test
 
   build-Accounts-service:
